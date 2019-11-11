@@ -3,23 +3,13 @@ print("""Черниш Аліна Андріївна\nКМ-93\nЛаборатор
 """22) Дано число A(>1). 
 Вивести найменше із цілих чисел K, для яких сума 1+1/2+...+1/K буде більше A,
 і саму цю суму"""
-import re
+from validators.validators_library import validator
+from validators.validators_library import re_float
 
-re_float = re.compile("^[-+]{0,1}\d+[.]?\d*$")
 
-def validator(pattern, promt):
-    text = input(promt)
-    while not bool(pattern.match(text)):
-        text = input(promt)
-    return text
-
-def float_validator(prompt):
-    number = float(validator(re_float, prompt))
-    return number
-
-A=float_validator("Введіть число більше за 1: ")
+A=float(validator(re_float,"Введіть число більше за 1: "))
 while A<=1:
-    A=float_validator("Введіть правильне число: ")
+    A=float(validator(re_float,"Введіть правильне число: "))
 K = 1
 sum = 1
 while sum <= A:
