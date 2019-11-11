@@ -12,7 +12,7 @@ while n < 1 :
     n = int(validator(re_integer,"Введіть число більше за 0: "))
 x = float(validator(re_float,"Введіть значення числа x: "))
 while x == 1 :
-    x = float_validator("Введіть число більше за 1: ")
+    x = float(validator(re_float,"Введіть число більше за 1: "))
 result=0
 for i in range(i,n+1) :
     result += ( (2*x + 1)**i) / ( x - 1 )
